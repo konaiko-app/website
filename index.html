@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konaiko</title>
+  <meta name="description" content="Konaiko is coming soon.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: oklch(0.198 0.008 252);
+      color: oklch(0.920 0.008 252);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: -20vh -20vw auto -20vw;
+      height: 60vh;
+      background:
+        radial-gradient(60vw 45vh at 15% -5%, oklch(0.40 0.115 248 / 0.34), transparent 60%),
+        radial-gradient(55vw 40vh at 95% 0%, oklch(0.420 0.116 303 / 0.18), transparent 65%);
+      pointer-events: none;
+      z-index: 0;
+      animation: breath 3600ms ease-in-out infinite alternate;
+    }
+
+    @keyframes breath {
+      0%   { opacity: 0.85; }
+      100% { opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      body::before { animation: none; }
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+    }
+
+    .logo {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.9375rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 2rem;
+      color: oklch(0.665 0.012 252);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      color: oklch(0.731 0.087 306);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="logo">Konaiko</div>
+    <h1>Coming Soon</h1>
+  </main>
+</body>
+</html>
